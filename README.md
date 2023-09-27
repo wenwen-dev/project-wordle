@@ -1,5 +1,14 @@
 # Word Game
 
+Learning 1: When validating form input data, utilise the already available ones of the html elements, e.g. 'required', 'minLength', 'maxLength'
+
+Learning 2:
+
+- Game.js contains [guesses, setGuesses], uplifted handleSubmit()
+- GameInput.js (child of Game.js) contains [guess, setGuess]
+  How can I clear the input field (of guess) upon form submission (calling handleSubmit)?
+  A: By keeping handleSubmit() in GameInput.js, so that it clears the input field, and create a handleSubmitGuess() in Game.js and call it inside handleSubmit(), so every time form is submitted, we clear the input, and update the guesses array using handleSubmitGuess()!
+
 ## Joy of React, Project I
 
 In this project, we'll recreate a popular online word game, Wordle:
@@ -225,10 +234,7 @@ The user wins the game when their guessed word is identical to the `answer`. The
 
 ```html
 <div class="happy banner">
-  <p>
-    <strong>Congratulations!</strong> Got it in
-    <strong>3 guesses</strong>.
-  </p>
+  <p><strong>Congratulations!</strong> Got it in <strong>3 guesses</strong>.</p>
 </div>
 ```
 
