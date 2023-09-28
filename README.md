@@ -1,6 +1,9 @@
 # Word Game
 
-Learning 1: When validating form input data, utilise the already available ones of the html elements, e.g. 'required', 'minLength', 'maxLength'
+## My Learnings
+
+Learning 1:
+When validating form input data, utilise the already available ones of the html elements, e.g. 'required', 'minLength', 'maxLength'
 
 Learning 2:
 
@@ -8,6 +11,11 @@ Learning 2:
 - GameInput.js (child of Game.js) contains [guess, setGuess]
   How can I clear the input field (of guess) upon form submission (calling handleSubmit)?
   A: By keeping handleSubmit() in GameInput.js, so that it clears the input field, and create a handleSubmitGuess() in Game.js and call it inside handleSubmit(), so every time form is submitted, we clear the input, and update the guesses array using handleSubmitGuess()!
+
+Learning 3:
+
+- What to map() with when we don't have an array? The range function which returns an array within given range can help with that! It's as if we can specify how many rows/columns we want suing CSS Grid!
+- It's possible 'displayedGuesses' have undefined values when rendered, so check that, because we can't call slice() and map() on undefine.
 
 ## Joy of React, Project I
 
