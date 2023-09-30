@@ -54,6 +54,19 @@ Learning 5:
 
 - Is it a good idea to put more than 1 component inside a file? If the other components are ONLY used by the main (exported) one, and the file doesn't become bloated and hard to read and understand, it can be a good idea - major component is clearer to read.
 
+Learning 6:
+
+- When things happen one step (render) behind, it's often because a status change is scheduled for next render, but not actually changed yet, therefore things that depend on that updated value isn't accurate.
+- A solution is create a copy of the updated state variable, store it in a const, and use it for things that depend on the state variable (for this render)
+- Example: gameStatus needs to become 'fail' when the length of guesses reaches 6. Create a nextGuesses to replace guesses for the current render.
+
+Learning 7: React way of thinking
+
+- template vs. reusable:
+  - React is powerful because components are often highly reusable. By thinking in template, e.g. if won, render this markup, it lost, render that markup, doesn't take advantage of React.
+  - Instead, decompose a complicated result into components, esp. components that build on each other and compliments each other. Ex: GameOverBanner = WonBanner + LostBanner = (Banner + customised className and variable) + (Banner + ...). WonBanner takes in a different prop than LostBanner from their parent Game. Each component is clear to understand and the way we pieces components up is so elegant!
+  - By thinking in reusability in terms of components, I can bring React's power into code
+
 ## Joy of React, Project I
 
 In this project, we'll recreate a popular online word game, Wordle:
