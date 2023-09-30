@@ -50,6 +50,10 @@ After:
   );
 ```
 
+Learning 5:
+
+- Is it a good idea to put more than 1 component inside a file? If the other components are ONLY used by the main (exported) one, and the file doesn't become bloated and hard to read and understand, it can be a good idea - major component is clearer to read.
+
 ## Joy of React, Project I
 
 In this project, we'll recreate a popular online word game, Wordle:
