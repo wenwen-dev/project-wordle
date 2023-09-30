@@ -17,6 +17,39 @@ Learning 3:
 - What to map() with when we don't have an array? The range function which returns an array within given range can help with that! It's as if we can specify how many rows/columns we want suing CSS Grid!
 - It's possible 'displayedGuesses' have undefined values when rendered, so check that, because we can't call slice() and map() on undefine.
 
+Learning 4:
+
+- Extract repeated code/logic into common structure
+  Before:
+
+```
+  return (
+    <p className='guess'>
+      {value
+        ? value.split('').map((letter, index) => (
+            <span key={index} className='cell'>
+              {letter}
+            </span>
+          ))
+        : range(5).map(num => <span key={num} className='cell'></span>)}
+    </p>
+  );
+```
+
+After:
+
+```
+  return (
+    <p className='guess'>
+      {range(5).map(num => (
+        <span key={num} className='cell'>
+          {value ? value[num] : undefined}
+        </span>
+      ))}
+    </p>
+  );
+```
+
 ## Joy of React, Project I
 
 In this project, we'll recreate a popular online word game, Wordle:
